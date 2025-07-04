@@ -18,7 +18,7 @@ const showMenu=()=>{
 
 const handleinput=(option)=>{
 
-    if(option === "1"){
+    if(option === "1" || option === "1.add a task"){
        
         rl.question("add your task",(task)=>{
             todos.push(task);
@@ -26,13 +26,13 @@ const handleinput=(option)=>{
             showMenu();
         })
 
-    }else if(option === "2"){
+    }else if(option === "2"|| option==="2.view a task"){
         console.log("Yours task are:");
         todos.forEach((value,index)=>{
             console.log(`${index}. ${value}`);
         })
         showMenu();
-    }else if(option === "3"){
+    }else if(option === "3"|| option==="3.Exit"){
         console.log("good byeeeeeeeeeeeeeeee......☺");
         rl.close()
     }else {
