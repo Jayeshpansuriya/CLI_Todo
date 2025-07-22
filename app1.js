@@ -1,14 +1,14 @@
 import readline from 'readline';
 
 const rl = readline.createInterface({
-    input:process.stdin,
-    output:process.stdout
+    input: process.stdin,
+    output: process.stdout
 
 })
 
-const todos=[];
+const todos = [];
 
-const showMenu=()=>{
+const showMenu = () => {
     console.log("\n1.add a task");
     console.log("2.view a task");
     console.log("3.Exit");
@@ -16,26 +16,26 @@ const showMenu=()=>{
 
 }
 
-const handleinput=(option)=>{
+const handleinput = (option) => {
 
-    if(option === "1" || option === "1.add a task"){
-       
-        rl.question("add your task",(task)=>{
+    if (option === "1" || option === "1.add a task") {
+
+        rl.question("add your task", (task) => {
             todos.push(task);
-            console.log('task added : '+ task)
+            console.log('task added : ' + task)
             showMenu();
         })
 
-    }else if(option === "2"|| option==="2.view a task"){
+    } else if (option === "2" || option === "2.view a task") {
         console.log("Yours task are:");
-        todos.forEach((value,index)=>{
+        todos.forEach((value, index) => {
             console.log(`${index}. ${value}`);
         })
         showMenu();
-    }else if(option === "3"|| option==="3.Exit"){
+    } else if (option === "3" || option === "3.Exit") {
         console.log("good byeeeeeeeeeeeeeeee......☺");
         rl.close()
-    }else {
+    } else {
         console.log("Invalid Input");
         showMenu();
     }
